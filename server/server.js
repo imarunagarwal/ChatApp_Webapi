@@ -3,7 +3,6 @@ var api = require('./api/api');
 var app = express();
 var config = require('./config/config');
 var logger = require('./util/logger');
-const path = require('path');
 
 // connection with the db
 require('mongoose')
@@ -21,10 +20,6 @@ if (config.seed) {
 
 //all the middle wares goes here.
 require('./middleware/appMiddleware')(app);
-
-// to remove /server from the directory path.
-let str = __dirname;
-str = str.substring(0, str.length - 7);
 
 app.use('/api', api);
 
