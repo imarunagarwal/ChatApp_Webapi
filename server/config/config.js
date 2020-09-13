@@ -5,8 +5,8 @@ var config = {
     test: 'testing',
     prod: 'production',
     port: process.env.PORT || 3000,
-    userMail: process.env.USERMAIL || "agarwal.arun97@gmail.com",
-    passMail: process.env.PASSMAIL || "jyzhqkcmnityylma",
+    userMail: process.env.USERMAIL || "email-goes-here",
+    passMail: process.env.PASSMAIL || "pass-goes-here",
     // 30 days
     expireTime: 30 * 24 * 60 * 60,
     secrets: {
