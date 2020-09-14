@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Webapi for Website",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -12,7 +15,6 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-jwt": "^5.3.3",
-    "https": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "method-override": "^3.0.0",
