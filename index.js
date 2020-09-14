@@ -3,6 +3,7 @@ var app = express();
 var config = require('./server/config/config');
 var api = require('./server/api/api');
 var logger = require('./server/util/logger');
+var https = require('https');
 
 // connection with the db
 require('mongoose')
@@ -12,7 +13,7 @@ require('mongoose')
             useNewUrlParser: true
         })
     .then(() => logger.log('DB Connected!'))
-    .catch(err => logger.error('DB Connection Error: '+ err.message));
+    .catch(err => logger.error('DB Connection Error: ' + err.message));
 
 if (config.seed) {
     require('./server/util/seed');
@@ -33,6 +34,7 @@ app.use(function (err, req, res, next) {
     res.status(500).send('Oops Internal Server Error');
 });
 
-
-var server = app.listen(config.port);
+var server = https.createServer({}, app);
+server.listen(config.port);
+// var server = app.listen(config.port);
 require('./server/socket')(server);
